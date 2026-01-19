@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agua-One Admin</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-title">Agua-One Admin</span>
+          <span class="brand-subtitle">Water Refilling Station</span>
+        </div>
+        <button id="logoutButton" class="btn btn-outline hidden">
+          Log out
+        </button>
+      </header>
+
+      <main>
+        <section id="loginSection" class="panel">
+          <h1>Admin Login</h1>
+          <p>Access the order dashboard and daily sales.</p>
+          <form id="loginForm" class="form">
+            <label>
+              Username
+              <input type="text" name="username" required />
+            </label>
+            <label>
+              Password
+              <input type="password" name="password" required />
+            </label>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+            <p id="loginError" class="error hidden"></p>
+          </form>
+        </section>
+
+        <section id="dashboardSection" class="hidden">
+          <div class="panel panel-header">
+            <div>
+              <h1>Daily Sales Dashboard</h1>
+              <p>Track orders, mark deliveries, and export sales reports.</p>
+            </div>
+            <div class="date-controls">
+              <label>
+                Select date
+                <input type="date" id="dateInput" />
+              </label>
+              <button id="refreshButton" class="btn btn-outline">
+                Refresh
+              </button>
+              <button id="downloadButton" class="btn btn-primary">
+                Download Excel
+              </button>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <p>Total Sales</p>
+              <h2 id="totalSales">0</h2>
+            </div>
+            <div class="stat-card">
+              <p>Total Orders Value</p>
+              <h2 id="totalOrders">0</h2>
+            </div>
+            <div class="stat-card">
+              <p>Delivered Sales</p>
+              <h2 id="totalDelivered">0</h2>
+            </div>
+            <div class="stat-card">
+              <p>Orders Today</p>
+              <h2 id="orderCount">0</h2>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h2>Orders</h2>
+            <div id="ordersList" class="orders-list"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./admin.js"></script>
+  </body>
+</html>
