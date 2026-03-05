@@ -9,6 +9,8 @@
     // See also https://aka.ms/tsconfig/module
     "types": [],
     "target": "es2020",
+    "module": "commonjs",
+    "moduleResolution": "node",
   
     // For nodejs:
     // "lib": ["esnext"],
@@ -34,6 +36,7 @@
 
     // Recommended Options
     "strict": true,
+    "noImplicitAny": false,
     "jsx": "react-jsx",
     "verbatimModuleSyntax": false,
     "isolatedModules": true,
